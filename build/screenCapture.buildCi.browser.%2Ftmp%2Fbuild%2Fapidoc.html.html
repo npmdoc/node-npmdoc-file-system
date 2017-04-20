@@ -1,0 +1,4595 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/douzi8/file-system">file-system (v2.2.2)</a>
+</h1>
+<h4>Strengthen the ability of file system</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.file-system">module file-system</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.FileReadStream">
+            function <span class="apidocSignatureSpan">file-system.</span>FileReadStream
+            <span class="apidocSignatureSpan">(path, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.FileWriteStream">
+            function <span class="apidocSignatureSpan">file-system.</span>FileWriteStream
+            <span class="apidocSignatureSpan">(path, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.ReadStream">
+            function <span class="apidocSignatureSpan">file-system.</span>ReadStream
+            <span class="apidocSignatureSpan">(path, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.Stats">
+            function <span class="apidocSignatureSpan">file-system.</span>Stats
+            <span class="apidocSignatureSpan">( dev, mode, nlink, uid, gid, rdev, blksize, ino, size, blocks, atim_msec, mtim_msec, ctim_msec, birthtim_msec)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.WriteStream">
+            function <span class="apidocSignatureSpan">file-system.</span>WriteStream
+            <span class="apidocSignatureSpan">(path, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system._toUnixTimestamp">
+            function <span class="apidocSignatureSpan">file-system.</span>_toUnixTimestamp
+            <span class="apidocSignatureSpan">(time)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.access">
+            function <span class="apidocSignatureSpan">file-system.</span>access
+            <span class="apidocSignatureSpan">(path, mode, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.accessSync">
+            function <span class="apidocSignatureSpan">file-system.</span>accessSync
+            <span class="apidocSignatureSpan">(path, mode)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.appendFile">
+            function <span class="apidocSignatureSpan">file-system.</span>appendFile
+            <span class="apidocSignatureSpan">(path, data, options, callback_)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.appendFileSync">
+            function <span class="apidocSignatureSpan">file-system.</span>appendFileSync
+            <span class="apidocSignatureSpan">(path, data, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.chmod">
+            function <span class="apidocSignatureSpan">file-system.</span>chmod
+            <span class="apidocSignatureSpan">(path, mode, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.chmodSync">
+            function <span class="apidocSignatureSpan">file-system.</span>chmodSync
+            <span class="apidocSignatureSpan">(path, mode)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.chown">
+            function <span class="apidocSignatureSpan">file-system.</span>chown
+            <span class="apidocSignatureSpan">(path, uid, gid, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.chownSync">
+            function <span class="apidocSignatureSpan">file-system.</span>chownSync
+            <span class="apidocSignatureSpan">(path, uid, gid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.close">
+            function <span class="apidocSignatureSpan">file-system.</span>close
+            <span class="apidocSignatureSpan">(fd, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.closeSync">
+            function <span class="apidocSignatureSpan">file-system.</span>closeSync
+            <span class="apidocSignatureSpan">(fd)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.copyFile">
+            function <span class="apidocSignatureSpan">file-system.</span>copyFile
+            <span class="apidocSignatureSpan">(srcpath, destpath, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.copyFileSync">
+            function <span class="apidocSignatureSpan">file-system.</span>copyFileSync
+            <span class="apidocSignatureSpan">(srcpath, destpath, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.copySync">
+            function <span class="apidocSignatureSpan">file-system.</span>copySync
+            <span class="apidocSignatureSpan">(dirpath, destpath, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.createReadStream">
+            function <span class="apidocSignatureSpan">file-system.</span>createReadStream
+            <span class="apidocSignatureSpan">(path, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.createWriteStream">
+            function <span class="apidocSignatureSpan">file-system.</span>createWriteStream
+            <span class="apidocSignatureSpan">(path, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.exists">
+            function <span class="apidocSignatureSpan">file-system.</span>exists
+            <span class="apidocSignatureSpan">(path, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.existsSync">
+            function <span class="apidocSignatureSpan">file-system.</span>existsSync
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.fchmod">
+            function <span class="apidocSignatureSpan">file-system.</span>fchmod
+            <span class="apidocSignatureSpan">(fd, mode, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.fchmodSync">
+            function <span class="apidocSignatureSpan">file-system.</span>fchmodSync
+            <span class="apidocSignatureSpan">(fd, mode)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.fchown">
+            function <span class="apidocSignatureSpan">file-system.</span>fchown
+            <span class="apidocSignatureSpan">(fd, uid, gid, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.fchownSync">
+            function <span class="apidocSignatureSpan">file-system.</span>fchownSync
+            <span class="apidocSignatureSpan">(fd, uid, gid)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.fdatasync">
+            function <span class="apidocSignatureSpan">file-system.</span>fdatasync
+            <span class="apidocSignatureSpan">(fd, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.fdatasyncSync">
+            function <span class="apidocSignatureSpan">file-system.</span>fdatasyncSync
+            <span class="apidocSignatureSpan">(fd)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.fileMatch">
+            function <span class="apidocSignatureSpan">file-system.</span>fileMatch
+            <span class="apidocSignatureSpan">(filter, ignore)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.fstat">
+            function <span class="apidocSignatureSpan">file-system.</span>fstat
+            <span class="apidocSignatureSpan">(fd, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.fstatSync">
+            function <span class="apidocSignatureSpan">file-system.</span>fstatSync
+            <span class="apidocSignatureSpan">(fd)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.fsync">
+            function <span class="apidocSignatureSpan">file-system.</span>fsync
+            <span class="apidocSignatureSpan">(fd, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.fsyncSync">
+            function <span class="apidocSignatureSpan">file-system.</span>fsyncSync
+            <span class="apidocSignatureSpan">(fd)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.ftruncate">
+            function <span class="apidocSignatureSpan">file-system.</span>ftruncate
+            <span class="apidocSignatureSpan">(fd, len, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.ftruncateSync">
+            function <span class="apidocSignatureSpan">file-system.</span>ftruncateSync
+            <span class="apidocSignatureSpan">(fd, len)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.futimes">
+            function <span class="apidocSignatureSpan">file-system.</span>futimes
+            <span class="apidocSignatureSpan">(fd, atime, mtime, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.futimesSync">
+            function <span class="apidocSignatureSpan">file-system.</span>futimesSync
+            <span class="apidocSignatureSpan">(fd, atime, mtime)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.link">
+            function <span class="apidocSignatureSpan">file-system.</span>link
+            <span class="apidocSignatureSpan">(existingPath, newPath, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.linkSync">
+            function <span class="apidocSignatureSpan">file-system.</span>linkSync
+            <span class="apidocSignatureSpan">(existingPath, newPath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.lstat">
+            function <span class="apidocSignatureSpan">file-system.</span>lstat
+            <span class="apidocSignatureSpan">(path, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.lstatSync">
+            function <span class="apidocSignatureSpan">file-system.</span>lstatSync
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.mkdir">
+            function <span class="apidocSignatureSpan">file-system.</span>mkdir
+            <span class="apidocSignatureSpan">(filepath, mode, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.mkdirSync">
+            function <span class="apidocSignatureSpan">file-system.</span>mkdirSync
+            <span class="apidocSignatureSpan">(filepath, mode)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.mkdtemp">
+            function <span class="apidocSignatureSpan">file-system.</span>mkdtemp
+            <span class="apidocSignatureSpan">(prefix, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.mkdtempSync">
+            function <span class="apidocSignatureSpan">file-system.</span>mkdtempSync
+            <span class="apidocSignatureSpan">(prefix, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.open">
+            function <span class="apidocSignatureSpan">file-system.</span>open
+            <span class="apidocSignatureSpan">(path, flags, mode, callback_)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.openSync">
+            function <span class="apidocSignatureSpan">file-system.</span>openSync
+            <span class="apidocSignatureSpan">(path, flags, mode)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.read">
+            function <span class="apidocSignatureSpan">file-system.</span>read
+            <span class="apidocSignatureSpan">(fd, buffer, offset, length, position, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.readFile">
+            function <span class="apidocSignatureSpan">file-system.</span>readFile
+            <span class="apidocSignatureSpan">(path, options, callback_)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.readFileSync">
+            function <span class="apidocSignatureSpan">file-system.</span>readFileSync
+            <span class="apidocSignatureSpan">(path, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.readSync">
+            function <span class="apidocSignatureSpan">file-system.</span>readSync
+            <span class="apidocSignatureSpan">(fd, buffer, offset, length, position)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.readdir">
+            function <span class="apidocSignatureSpan">file-system.</span>readdir
+            <span class="apidocSignatureSpan">(path, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.readdirSync">
+            function <span class="apidocSignatureSpan">file-system.</span>readdirSync
+            <span class="apidocSignatureSpan">(path, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.readlink">
+            function <span class="apidocSignatureSpan">file-system.</span>readlink
+            <span class="apidocSignatureSpan">(path, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.readlinkSync">
+            function <span class="apidocSignatureSpan">file-system.</span>readlinkSync
+            <span class="apidocSignatureSpan">(path, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.realpath">
+            function <span class="apidocSignatureSpan">file-system.</span>realpath
+            <span class="apidocSignatureSpan">(p, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.realpathSync">
+            function <span class="apidocSignatureSpan">file-system.</span>realpathSync
+            <span class="apidocSignatureSpan">(p, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.recurse">
+            function <span class="apidocSignatureSpan">file-system.</span>recurse
+            <span class="apidocSignatureSpan">(dirpath, filter, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.recurseSync">
+            function <span class="apidocSignatureSpan">file-system.</span>recurseSync
+            <span class="apidocSignatureSpan">(dirpath, filter, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.rename">
+            function <span class="apidocSignatureSpan">file-system.</span>rename
+            <span class="apidocSignatureSpan">(oldPath, newPath, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.renameSync">
+            function <span class="apidocSignatureSpan">file-system.</span>renameSync
+            <span class="apidocSignatureSpan">(oldPath, newPath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.rmdir">
+            function <span class="apidocSignatureSpan">file-system.</span>rmdir
+            <span class="apidocSignatureSpan">(path, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.rmdirSync">
+            function <span class="apidocSignatureSpan">file-system.</span>rmdirSync
+            <span class="apidocSignatureSpan">(dirpath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.stat">
+            function <span class="apidocSignatureSpan">file-system.</span>stat
+            <span class="apidocSignatureSpan">(path, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.statSync">
+            function <span class="apidocSignatureSpan">file-system.</span>statSync
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.symlink">
+            function <span class="apidocSignatureSpan">file-system.</span>symlink
+            <span class="apidocSignatureSpan">(target, path, type_, callback_)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.symlinkSync">
+            function <span class="apidocSignatureSpan">file-system.</span>symlinkSync
+            <span class="apidocSignatureSpan">(target, path, type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.truncate">
+            function <span class="apidocSignatureSpan">file-system.</span>truncate
+            <span class="apidocSignatureSpan">(path, len, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.truncateSync">
+            function <span class="apidocSignatureSpan">file-system.</span>truncateSync
+            <span class="apidocSignatureSpan">(path, len)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.unlink">
+            function <span class="apidocSignatureSpan">file-system.</span>unlink
+            <span class="apidocSignatureSpan">(path, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.unlinkSync">
+            function <span class="apidocSignatureSpan">file-system.</span>unlinkSync
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.unwatchFile">
+            function <span class="apidocSignatureSpan">file-system.</span>unwatchFile
+            <span class="apidocSignatureSpan">(filename, listener)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.utimes">
+            function <span class="apidocSignatureSpan">file-system.</span>utimes
+            <span class="apidocSignatureSpan">(path, atime, mtime, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.utimesSync">
+            function <span class="apidocSignatureSpan">file-system.</span>utimesSync
+            <span class="apidocSignatureSpan">(path, atime, mtime)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.watch">
+            function <span class="apidocSignatureSpan">file-system.</span>watch
+            <span class="apidocSignatureSpan">(filename, options, listener)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.watchFile">
+            function <span class="apidocSignatureSpan">file-system.</span>watchFile
+            <span class="apidocSignatureSpan">(filename, options, listener)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.write">
+            function <span class="apidocSignatureSpan">file-system.</span>write
+            <span class="apidocSignatureSpan">(fd, buffer, offset, length, position, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.writeFile">
+            function <span class="apidocSignatureSpan">file-system.</span>writeFile
+            <span class="apidocSignatureSpan">(filename, data, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.writeFileSync">
+            function <span class="apidocSignatureSpan">file-system.</span>writeFileSync
+            <span class="apidocSignatureSpan">(filename, data, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.writeSync">
+            function <span class="apidocSignatureSpan">file-system.</span>writeSync
+            <span class="apidocSignatureSpan">(fd, buffer, offset, length, position)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">file-system.</span>F_OK</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">file-system.</span>R_OK</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">file-system.</span>W_OK</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">file-system.</span>X_OK</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">file-system.</span>ReadStream.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">file-system.</span>Stats.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">file-system.</span>WriteStream.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">file-system.</span>constants</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.file-system.ReadStream">module file-system.ReadStream</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.ReadStream.ReadStream">
+            function <span class="apidocSignatureSpan">file-system.</span>ReadStream
+            <span class="apidocSignatureSpan">(path, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.ReadStream.super_">
+            function <span class="apidocSignatureSpan">file-system.ReadStream.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.file-system.ReadStream.prototype">module file-system.ReadStream.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.ReadStream.prototype._read">
+            function <span class="apidocSignatureSpan">file-system.ReadStream.prototype.</span>_read
+            <span class="apidocSignatureSpan">(n)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.ReadStream.prototype.close">
+            function <span class="apidocSignatureSpan">file-system.ReadStream.prototype.</span>close
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.ReadStream.prototype.destroy">
+            function <span class="apidocSignatureSpan">file-system.ReadStream.prototype.</span>destroy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.ReadStream.prototype.open">
+            function <span class="apidocSignatureSpan">file-system.ReadStream.prototype.</span>open
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.file-system.Stats">module file-system.Stats</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.Stats.Stats">
+            function <span class="apidocSignatureSpan">file-system.</span>Stats
+            <span class="apidocSignatureSpan">( dev, mode, nlink, uid, gid, rdev, blksize, ino, size, blocks, atim_msec, mtim_msec, ctim_msec, birthtim_msec)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.file-system.Stats.prototype">module file-system.Stats.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.Stats.prototype._checkModeProperty">
+            function <span class="apidocSignatureSpan">file-system.Stats.prototype.</span>_checkModeProperty
+            <span class="apidocSignatureSpan">(property)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.Stats.prototype.isBlockDevice">
+            function <span class="apidocSignatureSpan">file-system.Stats.prototype.</span>isBlockDevice
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.Stats.prototype.isCharacterDevice">
+            function <span class="apidocSignatureSpan">file-system.Stats.prototype.</span>isCharacterDevice
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.Stats.prototype.isDirectory">
+            function <span class="apidocSignatureSpan">file-system.Stats.prototype.</span>isDirectory
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.Stats.prototype.isFIFO">
+            function <span class="apidocSignatureSpan">file-system.Stats.prototype.</span>isFIFO
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.Stats.prototype.isFile">
+            function <span class="apidocSignatureSpan">file-system.Stats.prototype.</span>isFile
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.Stats.prototype.isSocket">
+            function <span class="apidocSignatureSpan">file-system.Stats.prototype.</span>isSocket
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.Stats.prototype.isSymbolicLink">
+            function <span class="apidocSignatureSpan">file-system.Stats.prototype.</span>isSymbolicLink
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.file-system.WriteStream">module file-system.WriteStream</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.WriteStream.WriteStream">
+            function <span class="apidocSignatureSpan">file-system.</span>WriteStream
+            <span class="apidocSignatureSpan">(path, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.WriteStream.super_">
+            function <span class="apidocSignatureSpan">file-system.WriteStream.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.file-system.WriteStream.prototype">module file-system.WriteStream.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.WriteStream.prototype._write">
+            function <span class="apidocSignatureSpan">file-system.WriteStream.prototype.</span>_write
+            <span class="apidocSignatureSpan">(data, encoding, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.WriteStream.prototype._writev">
+            function <span class="apidocSignatureSpan">file-system.WriteStream.prototype.</span>_writev
+            <span class="apidocSignatureSpan">(data, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.WriteStream.prototype.close">
+            function <span class="apidocSignatureSpan">file-system.WriteStream.prototype.</span>close
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.WriteStream.prototype.destroy">
+            function <span class="apidocSignatureSpan">file-system.WriteStream.prototype.</span>destroy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.WriteStream.prototype.destroySoon">
+            function <span class="apidocSignatureSpan">file-system.WriteStream.prototype.</span>destroySoon
+            <span class="apidocSignatureSpan">(chunk, encoding, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.file-system.WriteStream.prototype.open">
+            function <span class="apidocSignatureSpan">file-system.WriteStream.prototype.</span>open
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.file-system" id="apidoc.module.file-system">module file-system</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.FileReadStream" id="apidoc.element.file-system.FileReadStream">
+        function <span class="apidocSignatureSpan">file-system.</span>FileReadStream
+        <span class="apidocSignatureSpan">(path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ReadStream(path, options) {
+  if (!(this instanceof ReadStream))
+    return new ReadStream(path, options);
+
+  if (options === undefined)
+    options = {};
+  else if (typeof options === 'string')
+    options = { encoding: options };
+  else if (options === null || typeof options !== 'object')
+    throw new TypeError('"options" argument must be a string or an object');
+
+  // a little bit bigger buffer and water marks by default
+  options = Object.create(options);
+  if (options.highWaterMark === undefined)
+    options.highWaterMark = 64 * 1024;
+
+  Readable.call(this, options);
+
+  this.path = path;
+  this.fd = options.fd === undefined ? null : options.fd;
+  this.flags = options.flags === undefined ? 'r' : options.flags;
+  this.mode = options.mode === undefined ? 0o666 : options.mode;
+
+  this.start = options.start;
+  this.end = options.end;
+  this.autoClose = options.autoClose === undefined ? true : options.autoClose;
+  this.pos = undefined;
+  this.bytesRead = 0;
+
+  if (this.start !== undefined) {
+    if (typeof this.start !== 'number') {
+      throw new TypeError('"start" option must be a Number');
+    }
+    if (this.end === undefined) {
+      this.end = Infinity;
+    } else if (typeof this.end !== 'number') {
+      throw new TypeError('"end" option must be a Number');
+    }
+
+    if (this.start &gt; this.end) {
+      throw new Error('"start" option must be &lt;= "end" option');
+    }
+
+    this.pos = this.start;
+  }
+
+  if (typeof this.fd !== 'number')
+    this.open();
+
+  this.on('end', function() {
+    if (this.autoClose) {
+      this.destroy();
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.FileWriteStream" id="apidoc.element.file-system.FileWriteStream">
+        function <span class="apidocSignatureSpan">file-system.</span>FileWriteStream
+        <span class="apidocSignatureSpan">(path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WriteStream(path, options) {
+  if (!(this instanceof WriteStream))
+    return new WriteStream(path, options);
+
+  if (options === undefined)
+    options = {};
+  else if (typeof options === 'string')
+    options = { encoding: options };
+  else if (options === null || typeof options !== 'object')
+    throw new TypeError('"options" argument must be a string or an object');
+
+  options = Object.create(options);
+
+  Writable.call(this, options);
+
+  this.path = path;
+  this.fd = options.fd === undefined ? null : options.fd;
+  this.flags = options.flags === undefined ? 'w' : options.flags;
+  this.mode = options.mode === undefined ? 0o666 : options.mode;
+
+  this.start = options.start;
+  this.autoClose = options.autoClose === undefined ? true : !!options.autoClose;
+  this.pos = undefined;
+  this.bytesWritten = 0;
+
+  if (this.start !== undefined) {
+    if (typeof this.start !== 'number') {
+      throw new TypeError('"start" option must be a Number');
+    }
+    if (this.start &lt; 0) {
+      throw new Error('"start" must be &gt;= zero');
+    }
+
+    this.pos = this.start;
+  }
+
+  if (options.encoding)
+    this.setDefaultEncoding(options.encoding);
+
+  if (typeof this.fd !== 'number')
+    this.open();
+
+  // dispose on finish.
+  this.once('finish', function() {
+    if (this.autoClose) {
+      this.close();
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.ReadStream" id="apidoc.element.file-system.ReadStream">
+        function <span class="apidocSignatureSpan">file-system.</span>ReadStream
+        <span class="apidocSignatureSpan">(path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ReadStream(path, options) {
+  if (!(this instanceof ReadStream))
+    return new ReadStream(path, options);
+
+  if (options === undefined)
+    options = {};
+  else if (typeof options === 'string')
+    options = { encoding: options };
+  else if (options === null || typeof options !== 'object')
+    throw new TypeError('"options" argument must be a string or an object');
+
+  // a little bit bigger buffer and water marks by default
+  options = Object.create(options);
+  if (options.highWaterMark === undefined)
+    options.highWaterMark = 64 * 1024;
+
+  Readable.call(this, options);
+
+  this.path = path;
+  this.fd = options.fd === undefined ? null : options.fd;
+  this.flags = options.flags === undefined ? 'r' : options.flags;
+  this.mode = options.mode === undefined ? 0o666 : options.mode;
+
+  this.start = options.start;
+  this.end = options.end;
+  this.autoClose = options.autoClose === undefined ? true : options.autoClose;
+  this.pos = undefined;
+  this.bytesRead = 0;
+
+  if (this.start !== undefined) {
+    if (typeof this.start !== 'number') {
+      throw new TypeError('"start" option must be a Number');
+    }
+    if (this.end === undefined) {
+      this.end = Infinity;
+    } else if (typeof this.end !== 'number') {
+      throw new TypeError('"end" option must be a Number');
+    }
+
+    if (this.start &gt; this.end) {
+      throw new Error('"start" option must be &lt;= "end" option');
+    }
+
+    this.pos = this.start;
+  }
+
+  if (typeof this.fd !== 'number')
+    this.open();
+
+  this.on('end', function() {
+    if (this.autoClose) {
+      this.destroy();
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.Stats" id="apidoc.element.file-system.Stats">
+        function <span class="apidocSignatureSpan">file-system.</span>Stats
+        <span class="apidocSignatureSpan">( dev, mode, nlink, uid, gid, rdev, blksize, ino, size, blocks, atim_msec, mtim_msec, ctim_msec, birthtim_msec)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Stats( dev, mode, nlink, uid, gid, rdev, blksize, ino, size, blocks, atim_msec, mtim_msec, ctim_msec, birthtim_msec) {
+  this.dev = dev;
+  this.mode = mode;
+  this.nlink = nlink;
+  this.uid = uid;
+  this.gid = gid;
+  this.rdev = rdev;
+  this.blksize = blksize;
+  this.ino = ino;
+  this.size = size;
+  this.blocks = blocks;
+  this.atime = new Date(atim_msec);
+  this.mtime = new Date(mtim_msec);
+  this.ctime = new Date(ctim_msec);
+  this.birthtime = new Date(birthtim_msec);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.WriteStream" id="apidoc.element.file-system.WriteStream">
+        function <span class="apidocSignatureSpan">file-system.</span>WriteStream
+        <span class="apidocSignatureSpan">(path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WriteStream(path, options) {
+  if (!(this instanceof WriteStream))
+    return new WriteStream(path, options);
+
+  if (options === undefined)
+    options = {};
+  else if (typeof options === 'string')
+    options = { encoding: options };
+  else if (options === null || typeof options !== 'object')
+    throw new TypeError('"options" argument must be a string or an object');
+
+  options = Object.create(options);
+
+  Writable.call(this, options);
+
+  this.path = path;
+  this.fd = options.fd === undefined ? null : options.fd;
+  this.flags = options.flags === undefined ? 'w' : options.flags;
+  this.mode = options.mode === undefined ? 0o666 : options.mode;
+
+  this.start = options.start;
+  this.autoClose = options.autoClose === undefined ? true : !!options.autoClose;
+  this.pos = undefined;
+  this.bytesWritten = 0;
+
+  if (this.start !== undefined) {
+    if (typeof this.start !== 'number') {
+      throw new TypeError('"start" option must be a Number');
+    }
+    if (this.start &lt; 0) {
+      throw new Error('"start" must be &gt;= zero');
+    }
+
+    this.pos = this.start;
+  }
+
+  if (options.encoding)
+    this.setDefaultEncoding(options.encoding);
+
+  if (typeof this.fd !== 'number')
+    this.open();
+
+  // dispose on finish.
+  this.once('finish', function() {
+    if (this.autoClose) {
+      this.close();
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system._toUnixTimestamp" id="apidoc.element.file-system._toUnixTimestamp">
+        function <span class="apidocSignatureSpan">file-system.</span>_toUnixTimestamp
+        <span class="apidocSignatureSpan">(time)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toUnixTimestamp(time) {
+  if (typeof time === 'string' &amp;&amp; +time == time) {
+    return +time;
+  }
+  if (typeof time === 'number') {
+    if (!Number.isFinite(time) || time &lt; 0) {
+      return Date.now() / 1000;
+    }
+    return time;
+  }
+  if (util.isDate(time)) {
+    // convert to 123.456 UNIX timestamp
+    return time.getTime() / 1000;
+  }
+  throw new Error('Cannot parse time: ' + time);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.access" id="apidoc.element.file-system.access">
+        function <span class="apidocSignatureSpan">file-system.</span>access
+        <span class="apidocSignatureSpan">(path, mode, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">access = function (path, mode, callback) {
+  if (typeof mode === 'function') {
+    callback = mode;
+    mode = fs.F_OK;
+  } else if (typeof callback !== 'function') {
+    throw new TypeError('"callback" argument must be a function');
+  }
+
+  if (!nullCheck(path, callback))
+    return;
+
+  mode = mode | 0;
+  var req = new FSReqWrap();
+  req.oncomplete = makeCallback(callback);
+  binding.access(pathModule._makeLong(path), mode, req);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.accessSync" id="apidoc.element.file-system.accessSync">
+        function <span class="apidocSignatureSpan">file-system.</span>accessSync
+        <span class="apidocSignatureSpan">(path, mode)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">accessSync = function (path, mode) {
+  nullCheck(path);
+
+  if (mode === undefined)
+    mode = fs.F_OK;
+  else
+    mode = mode | 0;
+
+  binding.access(pathModule._makeLong(path), mode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.appendFile" id="apidoc.element.file-system.appendFile">
+        function <span class="apidocSignatureSpan">file-system.</span>appendFile
+        <span class="apidocSignatureSpan">(path, data, options, callback_)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">appendFile = function (path, data, options, callback_) {
+  var callback = maybeCallback(arguments[arguments.length - 1]);
+
+  if (!options || typeof options === 'function') {
+    options = { encoding: 'utf8', mode: 0o666, flag: 'a' };
+  } else if (typeof options === 'string') {
+    options = { encoding: options, mode: 0o666, flag: 'a' };
+  } else if (typeof options !== 'object') {
+    throwOptionsError(options);
+  }
+
+  if (!options.flag)
+    options = util._extend({ flag: 'a' }, options);
+
+  // force append behavior when using a supplied file descriptor
+  if (isFd(path))
+    options.flag = 'a';
+
+  fs.writeFile(path, data, options, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.appendFileSync" id="apidoc.element.file-system.appendFileSync">
+        function <span class="apidocSignatureSpan">file-system.</span>appendFileSync
+        <span class="apidocSignatureSpan">(path, data, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">appendFileSync = function (path, data, options) {
+  if (!options) {
+    options = { encoding: 'utf8', mode: 0o666, flag: 'a' };
+  } else if (typeof options === 'string') {
+    options = { encoding: options, mode: 0o666, flag: 'a' };
+  } else if (typeof options !== 'object') {
+    throwOptionsError(options);
+  }
+
+  if (!options.flag)
+    options = util._extend({ flag: 'a' }, options);
+
+  // force append behavior when using a supplied file descriptor
+  if (isFd(path))
+    options.flag = 'a';
+
+  fs.writeFileSync(path, data, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.chmod" id="apidoc.element.file-system.chmod">
+        function <span class="apidocSignatureSpan">file-system.</span>chmod
+        <span class="apidocSignatureSpan">(path, mode, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chmod = function (path, mode, callback) {
+  callback = makeCallback(callback);
+  if (!nullCheck(path, callback)) return;
+  var req = new FSReqWrap();
+  req.oncomplete = callback;
+  binding.chmod(pathModule._makeLong(path),
+                modeNum(mode),
+                req);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.chmodSync" id="apidoc.element.file-system.chmodSync">
+        function <span class="apidocSignatureSpan">file-system.</span>chmodSync
+        <span class="apidocSignatureSpan">(path, mode)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chmodSync = function (path, mode) {
+  nullCheck(path);
+  return binding.chmod(pathModule._makeLong(path), modeNum(mode));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.chown" id="apidoc.element.file-system.chown">
+        function <span class="apidocSignatureSpan">file-system.</span>chown
+        <span class="apidocSignatureSpan">(path, uid, gid, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chown = function (path, uid, gid, callback) {
+  callback = makeCallback(callback);
+  if (!nullCheck(path, callback)) return;
+  var req = new FSReqWrap();
+  req.oncomplete = callback;
+  binding.chown(pathModule._makeLong(path), uid, gid, req);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.chownSync" id="apidoc.element.file-system.chownSync">
+        function <span class="apidocSignatureSpan">file-system.</span>chownSync
+        <span class="apidocSignatureSpan">(path, uid, gid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chownSync = function (path, uid, gid) {
+  nullCheck(path);
+  return binding.chown(pathModule._makeLong(path), uid, gid);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.close" id="apidoc.element.file-system.close">
+        function <span class="apidocSignatureSpan">file-system.</span>close
+        <span class="apidocSignatureSpan">(fd, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function (fd, callback) {
+  var req = new FSReqWrap();
+  req.oncomplete = makeCallback(callback);
+  binding.close(fd, req);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.closeSync" id="apidoc.element.file-system.closeSync">
+        function <span class="apidocSignatureSpan">file-system.</span>closeSync
+        <span class="apidocSignatureSpan">(fd)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">closeSync = function (fd) {
+  return binding.close(fd);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.copyFile" id="apidoc.element.file-system.copyFile">
+        function <span class="apidocSignatureSpan">file-system.</span>copyFile
+        <span class="apidocSignatureSpan">(srcpath, destpath, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">copyFile = function (srcpath, destpath, options) {
+  options = util.extend({
+    encoding: 'utf8',
+    done: util.noop
+  }, options || {});
+
+  if (!options.process) {
+    options.encoding = null;
+  }
+
+  fs.readFile(srcpath, {
+    encoding: options.encoding
+  }, function(err, contents) {
+    if (err) return options.done(err);
+
+    if (options.process) {
+      contents = options.process(contents);
+    }
+
+    exports.writeFile(destpath, contents, options, options.done);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### .writeFileSync
+The api is same as node's writeFile
+
+### .fileMatch
+The api equal [file-match](https://github.com/douzi8/file-match)
+
+### .<span class="apidocCodeKeywordSpan">copyFile</span>(srcpath, destpath, options)
+Asynchronously copy a file into newpath
+* {string} ``srcpath`` required
+* {string} ``destpath`` required
+* {object} ``options``
+* {string} ``options.encoding`` [options.encoding=utf8]
+* {function} ``options.done(err)``
+* {function} ``options.process(content)``
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.copyFileSync" id="apidoc.element.file-system.copyFileSync">
+        function <span class="apidocSignatureSpan">file-system.</span>copyFileSync
+        <span class="apidocSignatureSpan">(srcpath, destpath, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">copyFileSync = function (srcpath, destpath, options) {
+  options = util.extend({
+    encoding: 'utf8'
+  }, options || {});
+  var contents;
+
+  if (options.process) {
+    contents = fs.readFileSync(srcpath, options);
+    contents = options.process(contents, srcpath, options.relative);
+
+    if (util.isObject(contents) &amp;&amp; contents.filepath) {
+      destpath = contents.filepath;
+      contents = contents.contents;
+    }
+
+    exports.writeFileSync(destpath, contents, options);
+  } else {
+    contents = fs.readFileSync(srcpath);
+    exports.writeFileSync(destpath, contents);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+fs.copyFile('deom.png', 'dest/demo.png', {
+done: function(err) {
+  console.log('done');
+}
+});
+```
+
+### .<span class="apidocCodeKeywordSpan">copyFileSync</span>(srcpath, destpath, options)
+The api same as copyFile, but it's synchronous
+```js
+fs.copyFileSync('demo.png', 'dest/demo.png');
+fs.copyFileSync('demo.css', 'dest/demo.css', {
+process: function(contents) {
+  return contents;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.copySync" id="apidoc.element.file-system.copySync">
+        function <span class="apidocSignatureSpan">file-system.</span>copySync
+        <span class="apidocSignatureSpan">(dirpath, destpath, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">copySync = function (dirpath, destpath, options) {
+  options = util.extend({
+    encoding: 'utf8',
+    filter: null,
+    noProcess: ''
+  }, options || {});
+  var noProcessCb = fileMatch(options.noProcess);
+
+  // Make sure dest root
+  exports.mkdirSync(destpath);
+  exports.recurseSync(dirpath, options.filter, function(filepath, relative, filename) {
+    if (!filename) return;
+    var newpath = path.join(destpath, relative);
+    var opts = {
+      relative: relative
+    };
+
+    if (options.process &amp;&amp; !noProcessCb(relative)) {
+      opts.encoding = options.encoding;
+      opts.process = options.process;
+    }
+
+    exports.copyFileSync(filepath, newpath, opts);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### .rmdirSync(dirpath)
+Recurse into a directory, remove all of the files and folder in this directory.
+```js
+fs.rmdirSync('path');
+```
+
+### .<span class="apidocCodeKeywordSpan">copySync</span>(dirpath, destpath, options)
+Recurse into a directory, copy all files into dest.
+* {string} ``dirpath`` required
+* {string} ``destpath`` required
+* {object} ``options``
+* {string|array} ``options.filter``
+* {function} ``options.process(contents, filepath, relative)``
+If custom the destpath, return object, otherwise return content
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.createReadStream" id="apidoc.element.file-system.createReadStream">
+        function <span class="apidocSignatureSpan">file-system.</span>createReadStream
+        <span class="apidocSignatureSpan">(path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createReadStream = function (path, options) {
+  return new ReadStream(path, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.createWriteStream" id="apidoc.element.file-system.createWriteStream">
+        function <span class="apidocSignatureSpan">file-system.</span>createWriteStream
+        <span class="apidocSignatureSpan">(path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createWriteStream = function (path, options) {
+  return new WriteStream(path, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.exists" id="apidoc.element.file-system.exists">
+        function <span class="apidocSignatureSpan">file-system.</span>exists
+        <span class="apidocSignatureSpan">(path, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exists = function (path, callback) {
+  if (!nullCheck(path, cb)) return;
+  var req = new FSReqWrap();
+  req.oncomplete = cb;
+  binding.stat(pathModule._makeLong(path), req);
+  function cb(err, stats) {
+    if (callback) callback(err ? false : true);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.existsSync" id="apidoc.element.file-system.existsSync">
+        function <span class="apidocSignatureSpan">file-system.</span>existsSync
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">existsSync = function (path) {
+  try {
+    nullCheck(path);
+    binding.stat(pathModule._makeLong(path), statValues);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      options: null,
+      callback: util.noop
+    };
+  }
+}
+
+function getExists(filepath) {
+  var exists = fs.<span class="apidocCodeKeywordSpan">existsSync</span>(filepath);
+
+  if (exists) {
+    return filepath;
+  } else {
+    return getExists(path.dirname(filepath));
+  }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.fchmod" id="apidoc.element.file-system.fchmod">
+        function <span class="apidocSignatureSpan">file-system.</span>fchmod
+        <span class="apidocSignatureSpan">(fd, mode, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fchmod = function (fd, mode, callback) {
+  var req = new FSReqWrap();
+  req.oncomplete = makeCallback(callback);
+  binding.fchmod(fd, modeNum(mode), req);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.fchmodSync" id="apidoc.element.file-system.fchmodSync">
+        function <span class="apidocSignatureSpan">file-system.</span>fchmodSync
+        <span class="apidocSignatureSpan">(fd, mode)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fchmodSync = function (fd, mode) {
+  return binding.fchmod(fd, modeNum(mode));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.fchown" id="apidoc.element.file-system.fchown">
+        function <span class="apidocSignatureSpan">file-system.</span>fchown
+        <span class="apidocSignatureSpan">(fd, uid, gid, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fchown = function (fd, uid, gid, callback) {
+  var req = new FSReqWrap();
+  req.oncomplete = makeCallback(callback);
+  binding.fchown(fd, uid, gid, req);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.fchownSync" id="apidoc.element.file-system.fchownSync">
+        function <span class="apidocSignatureSpan">file-system.</span>fchownSync
+        <span class="apidocSignatureSpan">(fd, uid, gid)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fchownSync = function (fd, uid, gid) {
+  return binding.fchown(fd, uid, gid);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.fdatasync" id="apidoc.element.file-system.fdatasync">
+        function <span class="apidocSignatureSpan">file-system.</span>fdatasync
+        <span class="apidocSignatureSpan">(fd, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fdatasync = function (fd, callback) {
+  var req = new FSReqWrap();
+  req.oncomplete = makeCallback(callback);
+  binding.fdatasync(fd, req);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.fdatasyncSync" id="apidoc.element.file-system.fdatasyncSync">
+        function <span class="apidocSignatureSpan">file-system.</span>fdatasyncSync
+        <span class="apidocSignatureSpan">(fd)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fdatasyncSync = function (fd) {
+  return binding.fdatasync(fd);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.fileMatch" id="apidoc.element.file-system.fileMatch">
+        function <span class="apidocSignatureSpan">file-system.</span>fileMatch
+        <span class="apidocSignatureSpan">(filter, ignore)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function fileMatch(filter, ignore) {
+  if (filter === null) {
+    return function() {
+      return true;
+    };
+  } else if (filter === '' || (util.isArray(filter) &amp;&amp; !filter.length)) {
+    return function() {
+      return false;
+    };
+  }
+
+  if (util.isString(filter)) {
+    filter = [filter];
+  }
+
+  var match = [];
+  var negate = [];
+  var isIgnore = ignore ? 'i' : '';
+
+  filter.forEach(function(item) {
+    var isNegate = item.indexOf('!') === 0;
+    item = item
+      .replace(/^!/, '')
+      .replace(/\*(?![\/*])/, '[^/]*?')
+      .replace('**\/', '([^/]+\/)*')
+      .replace(/\{([^\}]+)\}/g, function($1, $2) {
+        var collection = $2.split(',');
+        var length = collection.length;
+        var result = '(?:';
+
+        collection.forEach(function(item, index) {
+          result += '(' + item.trim() + ')';
+
+          if (index + 1 !== length) {
+            result += '|';
+          }
+        });
+
+        result += ')';
+
+        return result;
+      })
+      .replace(/([\/\.])/g, '\\$1');
+
+    item = '(^' + item + '$)';
+
+    if (isNegate) {
+      negate.push(item);
+    } else {
+      match.push(item);
+    }
+  });
+
+  match = match.length ?  new RegExp(match.join('|'), isIgnore) : null;
+  negate = negate.length ? new RegExp(negate.join('|'), isIgnore) : null;
+
+  return function(filepath) {
+    // Normalize \\ paths to / paths.
+    filepath = util.path.unixifyPath(filepath);
+
+    if (negate &amp;&amp; negate.test(filepath)) {
+      return false;
+    }
+
+    if (match &amp;&amp; match.test(filepath)) {
+      return true;
+    }
+
+    return false;
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.fstat" id="apidoc.element.file-system.fstat">
+        function <span class="apidocSignatureSpan">file-system.</span>fstat
+        <span class="apidocSignatureSpan">(fd, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fstat = function (fd, callback) {
+  var req = new FSReqWrap();
+  req.oncomplete = makeCallback(callback);
+  binding.fstat(fd, req);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.fstatSync" id="apidoc.element.file-system.fstatSync">
+        function <span class="apidocSignatureSpan">file-system.</span>fstatSync
+        <span class="apidocSignatureSpan">(fd)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fstatSync = function (fd) {
+  binding.fstat(fd, statValues);
+  return statsFromValues();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.fsync" id="apidoc.element.file-system.fsync">
+        function <span class="apidocSignatureSpan">file-system.</span>fsync
+        <span class="apidocSignatureSpan">(fd, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fsync = function (fd, callback) {
+  var req = new FSReqWrap();
+  req.oncomplete = makeCallback(callback);
+  binding.fsync(fd, req);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.fsyncSync" id="apidoc.element.file-system.fsyncSync">
+        function <span class="apidocSignatureSpan">file-system.</span>fsyncSync
+        <span class="apidocSignatureSpan">(fd)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fsyncSync = function (fd) {
+  return binding.fsync(fd);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.ftruncate" id="apidoc.element.file-system.ftruncate">
+        function <span class="apidocSignatureSpan">file-system.</span>ftruncate
+        <span class="apidocSignatureSpan">(fd, len, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ftruncate = function (fd, len, callback) {
+  if (typeof len === 'function') {
+    callback = len;
+    len = 0;
+  } else if (len === undefined) {
+    len = 0;
+  }
+  var req = new FSReqWrap();
+  req.oncomplete = makeCallback(callback);
+  binding.ftruncate(fd, len, req);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.ftruncateSync" id="apidoc.element.file-system.ftruncateSync">
+        function <span class="apidocSignatureSpan">file-system.</span>ftruncateSync
+        <span class="apidocSignatureSpan">(fd, len)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ftruncateSync = function (fd, len) {
+  if (len === undefined) {
+    len = 0;
+  }
+  return binding.ftruncate(fd, len);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.futimes" id="apidoc.element.file-system.futimes">
+        function <span class="apidocSignatureSpan">file-system.</span>futimes
+        <span class="apidocSignatureSpan">(fd, atime, mtime, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">futimes = function (fd, atime, mtime, callback) {
+  atime = toUnixTimestamp(atime);
+  mtime = toUnixTimestamp(mtime);
+  var req = new FSReqWrap();
+  req.oncomplete = makeCallback(callback);
+  binding.futimes(fd, atime, mtime, req);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.futimesSync" id="apidoc.element.file-system.futimesSync">
+        function <span class="apidocSignatureSpan">file-system.</span>futimesSync
+        <span class="apidocSignatureSpan">(fd, atime, mtime)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">futimesSync = function (fd, atime, mtime) {
+  atime = toUnixTimestamp(atime);
+  mtime = toUnixTimestamp(mtime);
+  binding.futimes(fd, atime, mtime);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.link" id="apidoc.element.file-system.link">
+        function <span class="apidocSignatureSpan">file-system.</span>link
+        <span class="apidocSignatureSpan">(existingPath, newPath, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">link = function (existingPath, newPath, callback) {
+  callback = makeCallback(callback);
+  if (!nullCheck(existingPath, callback)) return;
+  if (!nullCheck(newPath, callback)) return;
+
+  var req = new FSReqWrap();
+  req.oncomplete = callback;
+
+  binding.link(pathModule._makeLong(existingPath),
+               pathModule._makeLong(newPath),
+               req);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.linkSync" id="apidoc.element.file-system.linkSync">
+        function <span class="apidocSignatureSpan">file-system.</span>linkSync
+        <span class="apidocSignatureSpan">(existingPath, newPath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">linkSync = function (existingPath, newPath) {
+  nullCheck(existingPath);
+  nullCheck(newPath);
+  return binding.link(pathModule._makeLong(existingPath),
+                      pathModule._makeLong(newPath));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.lstat" id="apidoc.element.file-system.lstat">
+        function <span class="apidocSignatureSpan">file-system.</span>lstat
+        <span class="apidocSignatureSpan">(path, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lstat = function (path, callback) {
+  callback = makeCallback(callback);
+  if (!nullCheck(path, callback)) return;
+  var req = new FSReqWrap();
+  req.oncomplete = callback;
+  binding.lstat(pathModule._makeLong(path), req);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.lstatSync" id="apidoc.element.file-system.lstatSync">
+        function <span class="apidocSignatureSpan">file-system.</span>lstatSync
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lstatSync = function (path) {
+  nullCheck(path);
+  binding.lstat(pathModule._makeLong(path), statValues);
+  return statsFromValues();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.mkdir" id="apidoc.element.file-system.mkdir">
+        function <span class="apidocSignatureSpan">file-system.</span>mkdir
+        <span class="apidocSignatureSpan">(filepath, mode, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mkdir = function (filepath, mode, callback) {
+  var root = getExists(filepath);
+  var children  = path.relative(root, filepath);
+
+  if (util.isFunction(mode)) {
+    callback = mode;
+    mode = null;
+  }
+
+  if (!util.isFunction(callback)) {
+    callback = util.noop;
+  }
+
+  mode = mode || 511;
+
+  if (!children) return callback();
+
+  children = children.split(path.sep);
+
+  function create(filepath) {
+    if (create.count === children.length) {
+      return callback();
+    }
+
+    filepath = path.join(filepath, children[create.count]);
+
+    fs.mkdir(filepath, mode, function(err) {
+      create.count++;
+      create(filepath);
+    });
+  }
+
+  create.count = 0;
+  create(root);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+# file-system â€” Simplified file system
+[![NPM](https://nodei.co/npm/file-system.png?downloads=true&amp;downloadRank=true&amp;stars=true)](https://nodei.co/npm/file-system
+/)
+
+This module make file opertaion apis simple, you don't need to care the dir exits. and the api is same as node's filesystem
+. This is no exists time cost for this plugin.
+```js
+var fs = require('file-system');
+
+fs.<span class="apidocCodeKeywordSpan">mkdir</span>('1/2/3/4/5', [mode], function(err) {});
+fs.mkdirSync('1/2/3/4/5', [mode]);
+fs.writeFile('path/test.txt', 'aaa', function(err) {})
+```
+
+### install
+```
+npm install file-system --save
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.mkdirSync" id="apidoc.element.file-system.mkdirSync">
+        function <span class="apidocSignatureSpan">file-system.</span>mkdirSync
+        <span class="apidocSignatureSpan">(filepath, mode)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mkdirSync = function (filepath, mode) {
+  var root = getExists(filepath);
+  var children  = path.relative(root, filepath);
+
+  if (!children) return;
+
+  children = children.split(path.sep);
+
+  children.forEach(function(item) {
+    root = path.join(root, item);
+    fs.mkdirSync(root, mode);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[![NPM](https://nodei.co/npm/file-system.png?downloads=true&amp;downloadRank=true&amp;stars=true)](https://nodei.co/npm/file-system
+/)
+
+This module make file opertaion apis simple, you don't need to care the dir exits. and the api is same as node's filesystem
+. This is no exists time cost for this plugin.
+```js
+var fs = require('file-system');
+
+fs.mkdir('1/2/3/4/5', [mode], function(err) {});
+fs.<span class="apidocCodeKeywordSpan">mkdirSync</span>('1/2/3/4/5', [mode]);
+fs.writeFile('path/test.txt', 'aaa', function(err) {})
+```
+
+### install
+```
+npm install file-system --save
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.mkdtemp" id="apidoc.element.file-system.mkdtemp">
+        function <span class="apidocSignatureSpan">file-system.</span>mkdtemp
+        <span class="apidocSignatureSpan">(prefix, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mkdtemp = function (prefix, options, callback) {
+  if (!prefix || typeof prefix !== 'string')
+    throw new TypeError('filename prefix is required');
+
+  options = options || {};
+  if (typeof options === 'function') {
+    callback = options;
+    options = {};
+  } else if (typeof options === 'string') {
+    options = {encoding: options};
+  }
+  if (typeof options !== 'object')
+    throw new TypeError('"options" must be a string or an object');
+
+  callback = makeCallback(callback);
+  if (!nullCheck(prefix, callback)) {
+    return;
+  }
+
+  var req = new FSReqWrap();
+  req.oncomplete = callback;
+
+  binding.mkdtemp(prefix + 'XXXXXX', options.encoding, req);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.mkdtempSync" id="apidoc.element.file-system.mkdtempSync">
+        function <span class="apidocSignatureSpan">file-system.</span>mkdtempSync
+        <span class="apidocSignatureSpan">(prefix, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mkdtempSync = function (prefix, options) {
+  if (!prefix || typeof prefix !== 'string')
+    throw new TypeError('filename prefix is required');
+
+  options = options || {};
+  if (typeof options === 'string')
+    options = {encoding: options};
+  if (typeof options !== 'object')
+    throw new TypeError('"options" must be a string or an object');
+  nullCheck(prefix);
+
+  return binding.mkdtemp(prefix + 'XXXXXX', options.encoding);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.open" id="apidoc.element.file-system.open">
+        function <span class="apidocSignatureSpan">file-system.</span>open
+        <span class="apidocSignatureSpan">(path, flags, mode, callback_)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">open = function (path, flags, mode, callback_) {
+  var callback = makeCallback(arguments[arguments.length - 1]);
+  mode = modeNum(mode, 0o666);
+
+  if (!nullCheck(path, callback)) return;
+
+  var req = new FSReqWrap();
+  req.oncomplete = callback;
+
+  binding.open(pathModule._makeLong(path),
+               stringToFlags(flags),
+               mode,
+               req);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.openSync" id="apidoc.element.file-system.openSync">
+        function <span class="apidocSignatureSpan">file-system.</span>openSync
+        <span class="apidocSignatureSpan">(path, flags, mode)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">openSync = function (path, flags, mode) {
+  mode = modeNum(mode, 0o666);
+  nullCheck(path);
+  return binding.open(pathModule._makeLong(path), stringToFlags(flags), mode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.read" id="apidoc.element.file-system.read">
+        function <span class="apidocSignatureSpan">file-system.</span>read
+        <span class="apidocSignatureSpan">(fd, buffer, offset, length, position, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">read = function (fd, buffer, offset, length, position, callback) {
+  if (!(buffer instanceof Buffer)) {
+    // legacy string interface (fd, length, position, encoding, callback)
+    readWarned = printDeprecation('fs.read\'s legacy String interface ' +
+                                  'is deprecated. Use the Buffer API as ' +
+                                  'mentioned in the documentation instead.',
+                                  readWarned);
+    const cb = arguments[4];
+    const encoding = arguments[3];
+
+    assertEncoding(encoding);
+
+    position = arguments[2];
+    length = arguments[1];
+    buffer = Buffer.allocUnsafe(length);
+    offset = 0;
+
+    callback = function(err, bytesRead) {
+      if (!cb) return;
+      if (err) return cb(err);
+
+      if (bytesRead &gt; 0) {
+        tryToStringWithEnd(buffer, encoding, bytesRead, cb);
+      } else {
+        (cb)(err, '', bytesRead);
+      }
+    };
+  }
+
+  if (length === 0) {
+    return process.nextTick(function() {
+      callback &amp;&amp; callback(null, 0, buffer);
+    });
+  }
+
+  function wrapper(err, bytesRead) {
+    // Retain a reference to buffer so that it can't be GC'ed too soon.
+    callback &amp;&amp; callback(err, bytesRead || 0, buffer);
+  }
+
+  var req = new FSReqWrap();
+  req.oncomplete = wrapper;
+
+  binding.read(fd, buffer, offset, length, position, req);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.readFile" id="apidoc.element.file-system.readFile">
+        function <span class="apidocSignatureSpan">file-system.</span>readFile
+        <span class="apidocSignatureSpan">(path, options, callback_)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readFile = function (path, options, callback_) {
+  var callback = maybeCallback(arguments[arguments.length - 1]);
+
+  if (!options || typeof options === 'function') {
+    options = { encoding: null, flag: 'r' };
+  } else if (typeof options === 'string') {
+    options = { encoding: options, flag: 'r' };
+  } else if (typeof options !== 'object') {
+    throwOptionsError(options);
+  }
+
+  var encoding = options.encoding;
+  assertEncoding(encoding);
+
+  var flag = options.flag || 'r';
+
+  if (!nullCheck(path, callback))
+    return;
+
+  var context = new ReadFileContext(callback, encoding);
+  context.isUserFd = isFd(path); // file descriptor ownership
+  var req = new FSReqWrap();
+  req.context = context;
+  req.oncomplete = readFileAfterOpen;
+
+  if (context.isUserFd) {
+    process.nextTick(function() {
+      req.oncomplete(null, path);
+    });
+    return;
+  }
+
+  binding.open(pathModule._makeLong(path),
+               stringToFlags(flag),
+               0o666,
+               req);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+done: util.noop
+  }, options || {});
+
+  if (!options.process) {
+options.encoding = null;
+  }
+
+  fs.<span class="apidocCodeKeywordSpan">readFile</span>(srcpath, {
+encoding: options.encoding
+  }, function(err, contents) {
+if (err) return options.done(err);
+
+if (options.process) {
+  contents = options.process(contents);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.readFileSync" id="apidoc.element.file-system.readFileSync">
+        function <span class="apidocSignatureSpan">file-system.</span>readFileSync
+        <span class="apidocSignatureSpan">(path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readFileSync = function (path, options) {
+  if (!options) {
+    options = { encoding: null, flag: 'r' };
+  } else if (typeof options === 'string') {
+    options = { encoding: options, flag: 'r' };
+  } else if (typeof options !== 'object') {
+    throwOptionsError(options);
+  }
+
+  var encoding = options.encoding;
+  assertEncoding(encoding);
+
+  var flag = options.flag || 'r';
+  var isUserFd = isFd(path); // file descriptor ownership
+  var fd = isUserFd ? path : fs.openSync(path, flag, 0o666);
+
+  var st = tryStatSync(fd, isUserFd);
+  var size = st.isFile() ? st.size : 0;
+  var pos = 0;
+  var buffer; // single buffer with file data
+  var buffers; // list for when size is unknown
+
+  if (size === 0) {
+    buffers = [];
+  } else {
+    buffer = tryCreateBuffer(size, fd, isUserFd);
+  }
+
+  var bytesRead;
+
+  if (size !== 0) {
+    do {
+      bytesRead = tryReadSync(fd, isUserFd, buffer, pos, size - pos);
+      pos += bytesRead;
+    } while (bytesRead !== 0 &amp;&amp; pos &lt; size);
+  } else {
+    do {
+      // the kernel lies about many files.
+      // Go ahead and try to read some bytes.
+      buffer = Buffer.allocUnsafe(8192);
+      bytesRead = tryReadSync(fd, isUserFd, buffer, 0, 8192);
+      if (bytesRead !== 0) {
+        buffers.push(buffer.slice(0, bytesRead));
+      }
+      pos += bytesRead;
+    } while (bytesRead !== 0);
+  }
+
+  if (!isUserFd)
+    fs.closeSync(fd);
+
+  if (size === 0) {
+    // data was collected into the buffers list.
+    buffer = Buffer.concat(buffers, pos);
+  } else if (pos &lt; size) {
+    buffer = buffer.slice(0, pos);
+  }
+
+  if (encoding) buffer = buffer.toString(encoding);
+  return buffer;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+exports.copyFileSync = function(srcpath, destpath, options) {
+  options = util.extend({
+encoding: 'utf8'
+  }, options || {});
+  var contents;
+
+  if (options.process) {
+contents = fs.<span class="apidocCodeKeywordSpan">readFileSync</span>(srcpath, options);
+contents = options.process(contents, srcpath, options.relative);
+
+if (util.isObject(contents) &amp;&amp; contents.filepath) {
+  destpath = contents.filepath;
+  contents = contents.contents;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.readSync" id="apidoc.element.file-system.readSync">
+        function <span class="apidocSignatureSpan">file-system.</span>readSync
+        <span class="apidocSignatureSpan">(fd, buffer, offset, length, position)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readSync = function (fd, buffer, offset, length, position) {
+  var legacy = false;
+  var encoding;
+
+  if (!(buffer instanceof Buffer)) {
+    // legacy string interface (fd, length, position, encoding, callback)
+    readSyncWarned = printDeprecation('fs.readSync\'s legacy String interface' +
+                                      'is deprecated. Use the Buffer API as ' +
+                                      'mentioned in the documentation instead.',
+                                      readSyncWarned);
+    legacy = true;
+    encoding = arguments[3];
+
+    assertEncoding(encoding);
+
+    position = arguments[2];
+    length = arguments[1];
+    buffer = Buffer.allocUnsafe(length);
+
+    offset = 0;
+  }
+
+  if (length === 0) {
+    if (legacy) {
+      return ['', 0];
+    } else {
+      return 0;
+    }
+  }
+
+  var r = binding.read(fd, buffer, offset, length, position);
+  if (!legacy) {
+    return r;
+  }
+
+  var str = (r &gt; 0) ? buffer.toString(encoding, 0, r) : '';
+  return [str, r];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.readdir" id="apidoc.element.file-system.readdir">
+        function <span class="apidocSignatureSpan">file-system.</span>readdir
+        <span class="apidocSignatureSpan">(path, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readdir = function (path, options, callback) {
+  options = options || {};
+  if (typeof options === 'function') {
+    callback = options;
+    options = {};
+  } else if (typeof options === 'string') {
+    options = {encoding: options};
+  }
+  if (typeof options !== 'object')
+    throw new TypeError('"options" must be a string or an object');
+
+  callback = makeCallback(callback);
+  if (!nullCheck(path, callback)) return;
+  var req = new FSReqWrap();
+  req.oncomplete = callback;
+  binding.readdir(pathModule._makeLong(path), options.encoding, req);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    callback = filter;
+    filter = null;
+  }
+  var filterCb = fileMatch(filter);
+  var rootpath = dirpath;
+
+  function recurse(dirpath) {
+    fs.<span class="apidocCodeKeywordSpan">readdir</span>(dirpath, function(err, files) {
+      if (err) return callback(err);
+
+      files.forEach(function(filename) {
+var filepath = path.join(dirpath, filename);
+
+fs.stat(filepath, function(err, stats) {
+    var relative = path.relative(rootpath, filepath);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.readdirSync" id="apidoc.element.file-system.readdirSync">
+        function <span class="apidocSignatureSpan">file-system.</span>readdirSync
+        <span class="apidocSignatureSpan">(path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readdirSync = function (path, options) {
+  options = options || {};
+  if (typeof options === 'string')
+    options = {encoding: options};
+  if (typeof options !== 'object')
+    throw new TypeError('"options" must be a string or an object');
+  nullCheck(path);
+  return binding.readdir(pathModule._makeLong(path), options.encoding);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    callback = filter;
+    filter = null;
+  }
+  var filterCb = fileMatch(filter);
+  var rootpath = dirpath;
+
+  function recurse(dirpath) {
+    fs.<span class="apidocCodeKeywordSpan">readdirSync</span>(dirpath).forEach(function(filename) {
+var filepath = path.join(dirpath, filename);
+var stats = fs.statSync(filepath);
+var relative = path.relative(rootpath, filepath);
+var flag = filterCb(relative);
+
+if (stats.isDirectory()) {
+  recurse(filepath);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.readlink" id="apidoc.element.file-system.readlink">
+        function <span class="apidocSignatureSpan">file-system.</span>readlink
+        <span class="apidocSignatureSpan">(path, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readlink = function (path, options, callback) {
+  options = options || {};
+  if (typeof options === 'function') {
+    callback = options;
+    options = {};
+  } else if (typeof options === 'string') {
+    options = {encoding: options};
+  }
+  if (typeof options !== 'object')
+    throw new TypeError('"options" must be a string or an object');
+  callback = makeCallback(callback);
+  if (!nullCheck(path, callback)) return;
+  var req = new FSReqWrap();
+  req.oncomplete = callback;
+  binding.readlink(pathModule._makeLong(path), options.encoding, req);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.readlinkSync" id="apidoc.element.file-system.readlinkSync">
+        function <span class="apidocSignatureSpan">file-system.</span>readlinkSync
+        <span class="apidocSignatureSpan">(path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readlinkSync = function (path, options) {
+  options = options || {};
+  if (typeof options === 'string')
+    options = {encoding: options};
+  if (typeof options !== 'object')
+    throw new TypeError('"options" must be a string or an object');
+  nullCheck(path);
+  return binding.readlink(pathModule._makeLong(path), options.encoding);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.realpath" id="apidoc.element.file-system.realpath">
+        function <span class="apidocSignatureSpan">file-system.</span>realpath
+        <span class="apidocSignatureSpan">(p, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function realpath(p, options, callback) {
+  if (typeof callback !== 'function') {
+    callback = maybeCallback(options);
+    options = {};
+  }
+
+  if (!options) {
+    options = {};
+  } else if (typeof options === 'function') {
+    options = {};
+  } else if (typeof options === 'string') {
+    options = {encoding: options};
+  } else if (typeof options !== 'object') {
+    throw new TypeError('"options" must be a string or an object');
+  }
+  if (!nullCheck(p, callback))
+    return;
+
+  p = p.toString('utf8');
+  p = pathModule.resolve(p);
+
+  const seenLinks = {};
+  const knownHard = {};
+
+  // current character position in p
+  var pos;
+  // the partial path so far, including a trailing slash if any
+  var current;
+  // the partial path without a trailing slash (except when pointing at a root)
+  var base;
+  // the partial path scanned in the previous round, with slash
+  var previous;
+
+  start();
+
+  function start() {
+    // Skip over roots
+    var m = splitRootRe.exec(p);
+    pos = m[0].length;
+    current = m[0];
+    base = m[0];
+    previous = '';
+
+    // On windows, check that the root exists. On unix there is no need.
+    if (isWindows &amp;&amp; !knownHard[base]) {
+      fs.lstat(base, function(err) {
+        if (err) return callback(err);
+        knownHard[base] = true;
+        LOOP();
+      });
+    } else {
+      process.nextTick(LOOP);
+    }
+  }
+
+  // walk down the path, swapping out linked pathparts for their real
+  // values
+  function LOOP() {
+    // stop if scanned past end of path
+    if (pos &gt;= p.length) {
+      return callback(null, encodeRealpathResult(p, options));
+    }
+
+    // find the next part
+    nextPartRe.lastIndex = pos;
+    var result = nextPartRe.exec(p);
+    previous = current;
+    current += result[0];
+    base = previous + result[1];
+    pos = nextPartRe.lastIndex;
+
+    // continue if not a symlink
+    if (knownHard[base]) {
+      return process.nextTick(LOOP);
+    }
+
+    return fs.lstat(base, gotStat);
+  }
+
+  function gotStat(err, stat) {
+    if (err) return callback(err);
+
+    // if not a symlink, skip to the next path part
+    if (!stat.isSymbolicLink()) {
+      knownHard[base] = true;
+      return process.nextTick(LOOP);
+    }
+
+    // stat &amp; read the link if not read before
+    // call gotTarget as soon as the link target is known
+    // dev/ino always return 0 on windows, so skip the check.
+    let id;
+    if (!isWindows) {
+      id = `${stat.dev.toString(32)}:${stat.ino.toString(32)}`;
+      if (seenLinks.hasOwnProperty(id)) {
+        return gotTarget(null, seenLinks[id], base);
+      }
+    }
+    fs.stat(base, function(err) {
+      if (err) return callback(err);
+
+      fs.readlink(base, function(err, target) {
+        if (!isWindows) seenLinks[id] = target;
+        gotTarget(err, target);
+      });
+    });
+  }
+
+  function gotTarget(err, target, base) {
+    if (err) return callback(err);
+
+    var resolvedLink = pathModule.resolve(previous, target);
+    gotResolvedLink(resolvedLink);
+  }
+
+  function gotResolvedLink(resolvedLink) {
+    // resolve the link, then start over
+    p = pathModule.resolve(resolvedLink, p.slice(pos));
+    start();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.realpathSync" id="apidoc.element.file-system.realpathSync">
+        function <span class="apidocSignatureSpan">file-system.</span>realpathSync
+        <span class="apidocSignatureSpan">(p, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function realpathSync(p, options) {
+  if (!options)
+    options = {};
+  else if (typeof options === 'string')
+    options = {encoding: options};
+  else if (typeof options !== 'object')
+    throw new TypeError('"options" must be a string or an object');
+  nullCheck(p);
+
+  p = p.toString('utf8');
+  p = pathModule.resolve(p);
+
+  const seenLinks = {};
+  const knownHard = {};
+  const cache = options[realpathCacheKey];
+  const original = p;
+
+  const maybeCachedResult = cache &amp;&amp; cache.get(p);
+  if (maybeCachedResult) {
+    return maybeCachedResult;
+  }
+
+  // current character position in p
+  var pos;
+  // the partial path so far, including a trailing slash if any
+  var current;
+  // the partial path without a trailing slash (except when pointing at a root)
+  var base;
+  // the partial path scanned in the previous round, with slash
+  var previous;
+
+  start();
+
+  function start() {
+    // Skip over roots
+    var m = splitRootRe.exec(p);
+    pos = m[0].length;
+    current = m[0];
+    base = m[0];
+    previous = '';
+
+    // On windows, check that the root exists. On unix there is no need.
+    if (isWindows &amp;&amp; !knownHard[base]) {
+      fs.lstatSync(base);
+      knownHard[base] = true;
+    }
+  }
+
+  // walk down the path, swapping out linked pathparts for their real
+  // values
+  // NB: p.length changes.
+  while (pos &lt; p.length) {
+    // find the next part
+    nextPartRe.lastIndex = pos;
+    var result = nextPartRe.exec(p);
+    previous = current;
+    current += result[0];
+    base = previous + result[1];
+    pos = nextPartRe.lastIndex;
+
+    // continue if not a symlink
+    if (knownHard[base] || (cache &amp;&amp; cache.get(base) === base)) {
+      continue;
+    }
+
+    var resolvedLink;
+    const maybeCachedResolved = cache &amp;&amp; cache.get(base);
+    if (maybeCachedResolved) {
+      resolvedLink = maybeCachedResolved;
+    } else {
+      var stat = fs.lstatSync(base);
+      if (!stat.isSymbolicLink()) {
+        knownHard[base] = true;
+        if (cache) cache.set(base, base);
+        continue;
+      }
+
+      // read the link if it wasn't read before
+      // dev/ino always return 0 on windows, so skip the check.
+      let linkTarget = null;
+      let id;
+      if (!isWindows) {
+        id = `${stat.dev.toString(32)}:${stat.ino.toString(32)}`;
+        if (seenLinks.hasOwnProperty(id)) {
+          linkTarget = seenLinks[id];
+        }
+      }
+      if (linkTarget === null) {
+        fs.statSync(base);
+        linkTarget = fs.readlinkSync(base);
+      }
+      resolvedLink = pathModule.resolve(previous, linkTarget);
+
+      if (cache) cache.set(base, resolvedLink);
+      if (!isWindows) seenLinks[id] = linkTarget;
+    }
+
+    // resolve the link, then start over
+    p = pathModule.resolve(resolvedLink, p.slice(pos));
+    start();
+  }
+
+  if (cache) cache.set(original, p);
+  return encodeRealpathResult(p, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.recurse" id="apidoc.element.file-system.recurse">
+        function <span class="apidocSignatureSpan">file-system.</span>recurse
+        <span class="apidocSignatureSpan">(dirpath, filter, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">recurse = function (dirpath, filter, callback) {
+  if (util.isFunction(filter)) {
+    callback = filter;
+    filter = null;
+  }
+  var filterCb = fileMatch(filter);
+  var rootpath = dirpath;
+
+  function recurse(dirpath) {
+    fs.readdir(dirpath, function(err, files) {
+      if (err) return callback(err);
+
+      files.forEach(function(filename) {
+        var filepath = path.join(dirpath, filename);
+
+        fs.stat(filepath, function(err, stats) {
+            var relative = path.relative(rootpath, filepath);
+            var flag = filterCb(relative);
+
+            if (stats.isDirectory()) {
+              recurse(filepath);
+              if (flag) callback(filepath, relative);
+            } else {
+              if (flag) callback(filepath, relative, filename);
+            }
+          });
+        });
+    });
+  }
+
+  recurse(dirpath);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+fs.copyFileSync('demo.css', 'dest/demo.css', {
+  process: function(contents) {
+    return contents;
+  }
+})
+```
+
+### .<span class="apidocCodeKeywordSpan">recurse</span>(dirpath, filter, callback)
+Recurse into a directory, executing callback for each file and folder.
+if the filename is undefiend, the callback is for folder, otherwise for file.
+* {string} ``dirpath`` required
+* {string|array|function} ``filter``
+If the filter is function, executing callback for all files and folder
+* {function} ``callback(filepath, filename, relative)``
+```js
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.recurseSync" id="apidoc.element.file-system.recurseSync">
+        function <span class="apidocSignatureSpan">file-system.</span>recurseSync
+        <span class="apidocSignatureSpan">(dirpath, filter, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">recurseSync = function (dirpath, filter, callback) {
+  if (util.isFunction(filter)) {
+    callback = filter;
+    filter = null;
+  }
+  var filterCb = fileMatch(filter);
+  var rootpath = dirpath;
+
+  function recurse(dirpath) {
+    fs.readdirSync(dirpath).forEach(function(filename) {
+      var filepath = path.join(dirpath, filename);
+      var stats = fs.statSync(filepath);
+      var relative = path.relative(rootpath, filepath);
+      var flag = filterCb(relative);
+
+      if (stats.isDirectory()) {
+        recurse(filepath);
+        if (flag) callback(filepath, relative);
+      } else {
+        if (flag) callback(filepath, relative, filename);
+      }
+    });
+  }
+
+  recurse(dirpath);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+//  Only using files
+fs.recurse('path', function(filepath, relative, filename) {
+  if (!filename) return;
+});
+```
+[filter params description](https://github.com/douzi8/file-match#filter-description)
+
+### .<span class="apidocCodeKeywordSpan">recurseSync</span>(dirpath, filter, callback)
+The api is same as recurse, but it is synchronous
+```js
+fs.recurseSync('path', function(filepath, relative, filename) {
+
+});
+
+fs.recurseSync('path', ['**/*.js', 'path/**/*.html'], function(filepath, relative, filename) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.rename" id="apidoc.element.file-system.rename">
+        function <span class="apidocSignatureSpan">file-system.</span>rename
+        <span class="apidocSignatureSpan">(oldPath, newPath, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rename = function (oldPath, newPath, callback) {
+  callback = makeCallback(callback);
+  if (!nullCheck(oldPath, callback)) return;
+  if (!nullCheck(newPath, callback)) return;
+  var req = new FSReqWrap();
+  req.oncomplete = callback;
+  binding.rename(pathModule._makeLong(oldPath),
+                 pathModule._makeLong(newPath),
+                 req);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.renameSync" id="apidoc.element.file-system.renameSync">
+        function <span class="apidocSignatureSpan">file-system.</span>renameSync
+        <span class="apidocSignatureSpan">(oldPath, newPath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">renameSync = function (oldPath, newPath) {
+  nullCheck(oldPath);
+  nullCheck(newPath);
+  return binding.rename(pathModule._makeLong(oldPath),
+                        pathModule._makeLong(newPath));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.rmdir" id="apidoc.element.file-system.rmdir">
+        function <span class="apidocSignatureSpan">file-system.</span>rmdir
+        <span class="apidocSignatureSpan">(path, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rmdir = function (path, callback) {
+  callback = maybeCallback(callback);
+  if (!nullCheck(path, callback)) return;
+  var req = new FSReqWrap();
+  req.oncomplete = callback;
+  binding.rmdir(pathModule._makeLong(path), req);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.rmdirSync" id="apidoc.element.file-system.rmdirSync">
+        function <span class="apidocSignatureSpan">file-system.</span>rmdirSync
+        <span class="apidocSignatureSpan">(dirpath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rmdirSync = function (dirpath) {
+  exports.recurseSync(dirpath, function(filepath, relative, filename) {
+    // it is file, otherwise it's folder
+    if (filename) {
+      fs.unlinkSync(filepath);
+    } else {
+      fs.rmdirSync(filepath);
+    }
+  });
+
+  fs.rmdirSync(dirpath);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+
+fs.recurseSync('path', ['**/*.js', 'path/**/*.html'], function(filepath, relative, filename) {
+
+});
+```
+
+### .<span class="apidocCodeKeywordSpan">rmdirSync</span>(dirpath)
+Recurse into a directory, remove all of the files and folder in this directory.
+```js
+fs.rmdirSync('path');
+```
+
+### .copySync(dirpath, destpath, options)
+Recurse into a directory, copy all files into dest.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.stat" id="apidoc.element.file-system.stat">
+        function <span class="apidocSignatureSpan">file-system.</span>stat
+        <span class="apidocSignatureSpan">(path, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stat = function (path, callback) {
+  callback = makeCallback(callback);
+  if (!nullCheck(path, callback)) return;
+  var req = new FSReqWrap();
+  req.oncomplete = callback;
+  binding.stat(pathModule._makeLong(path), req);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  function recurse(dirpath) {
+    fs.readdir(dirpath, function(err, files) {
+      if (err) return callback(err);
+
+      files.forEach(function(filename) {
+        var filepath = path.join(dirpath, filename);
+
+        fs.<span class="apidocCodeKeywordSpan">stat</span>(filepath, function(err, stats) {
+var relative = path.relative(rootpath, filepath);
+var flag = filterCb(relative);
+
+if (stats.isDirectory()) {
+  recurse(filepath);
+  if (flag) callback(filepath, relative);
+} else {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.statSync" id="apidoc.element.file-system.statSync">
+        function <span class="apidocSignatureSpan">file-system.</span>statSync
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">statSync = function (path) {
+  nullCheck(path);
+  binding.stat(pathModule._makeLong(path), statValues);
+  return statsFromValues();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+  var filterCb = fileMatch(filter);
+  var rootpath = dirpath;
+
+  function recurse(dirpath) {
+    fs.readdirSync(dirpath).forEach(function(filename) {
+var filepath = path.join(dirpath, filename);
+var stats = fs.<span class="apidocCodeKeywordSpan">statSync</span>(filepath);
+var relative = path.relative(rootpath, filepath);
+var flag = filterCb(relative);
+
+if (stats.isDirectory()) {
+  recurse(filepath);
+  if (flag) callback(filepath, relative);
+} else {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.symlink" id="apidoc.element.file-system.symlink">
+        function <span class="apidocSignatureSpan">file-system.</span>symlink
+        <span class="apidocSignatureSpan">(target, path, type_, callback_)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">symlink = function (target, path, type_, callback_) {
+  var type = (typeof type_ === 'string' ? type_ : null);
+  var callback = makeCallback(arguments[arguments.length - 1]);
+
+  if (!nullCheck(target, callback)) return;
+  if (!nullCheck(path, callback)) return;
+
+  var req = new FSReqWrap();
+  req.oncomplete = callback;
+
+  binding.symlink(preprocessSymlinkDestination(target, type, path),
+                  pathModule._makeLong(path),
+                  type,
+                  req);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.symlinkSync" id="apidoc.element.file-system.symlinkSync">
+        function <span class="apidocSignatureSpan">file-system.</span>symlinkSync
+        <span class="apidocSignatureSpan">(target, path, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">symlinkSync = function (target, path, type) {
+  type = (typeof type === 'string' ? type : null);
+
+  nullCheck(target);
+  nullCheck(path);
+
+  return binding.symlink(preprocessSymlinkDestination(target, type, path),
+                         pathModule._makeLong(path),
+                         type);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.truncate" id="apidoc.element.file-system.truncate">
+        function <span class="apidocSignatureSpan">file-system.</span>truncate
+        <span class="apidocSignatureSpan">(path, len, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">truncate = function (path, len, callback) {
+  if (typeof path === 'number') {
+    return fs.ftruncate(path, len, callback);
+  }
+  if (typeof len === 'function') {
+    callback = len;
+    len = 0;
+  } else if (len === undefined) {
+    len = 0;
+  }
+
+  callback = maybeCallback(callback);
+  fs.open(path, 'r+', function(er, fd) {
+    if (er) return callback(er);
+    var req = new FSReqWrap();
+    req.oncomplete = function oncomplete(er) {
+      fs.close(fd, function(er2) {
+        callback(er || er2);
+      });
+    };
+    binding.ftruncate(fd, len, req);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.truncateSync" id="apidoc.element.file-system.truncateSync">
+        function <span class="apidocSignatureSpan">file-system.</span>truncateSync
+        <span class="apidocSignatureSpan">(path, len)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">truncateSync = function (path, len) {
+  if (typeof path === 'number') {
+    // legacy
+    return fs.ftruncateSync(path, len);
+  }
+  if (len === undefined) {
+    len = 0;
+  }
+  // allow error to be thrown, but still close fd.
+  var fd = fs.openSync(path, 'r+');
+  var ret;
+
+  try {
+    ret = fs.ftruncateSync(fd, len);
+  } finally {
+    fs.closeSync(fd);
+  }
+  return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.unlink" id="apidoc.element.file-system.unlink">
+        function <span class="apidocSignatureSpan">file-system.</span>unlink
+        <span class="apidocSignatureSpan">(path, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unlink = function (path, callback) {
+  callback = makeCallback(callback);
+  if (!nullCheck(path, callback)) return;
+  var req = new FSReqWrap();
+  req.oncomplete = callback;
+  binding.unlink(pathModule._makeLong(path), req);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.unlinkSync" id="apidoc.element.file-system.unlinkSync">
+        function <span class="apidocSignatureSpan">file-system.</span>unlinkSync
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unlinkSync = function (path) {
+  nullCheck(path);
+  return binding.unlink(pathModule._makeLong(path));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @example
+ * file.rmdirSync('path');
+ */
+exports.rmdirSync = function(dirpath) {
+  exports.recurseSync(dirpath, function(filepath, relative, filename) {
+    // it is file, otherwise it's folder
+    if (filename) {
+      fs.<span class="apidocCodeKeywordSpan">unlinkSync</span>(filepath);
+    } else {
+      fs.rmdirSync(filepath);
+    }
+  });
+
+  fs.rmdirSync(dirpath);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.unwatchFile" id="apidoc.element.file-system.unwatchFile">
+        function <span class="apidocSignatureSpan">file-system.</span>unwatchFile
+        <span class="apidocSignatureSpan">(filename, listener)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unwatchFile = function (filename, listener) {
+  nullCheck(filename);
+  filename = pathModule.resolve(filename);
+  var stat = statWatchers.get(filename);
+
+  if (stat === undefined) return;
+
+  if (typeof listener === 'function') {
+    stat.removeListener('change', listener);
+  } else {
+    stat.removeAllListeners('change');
+  }
+
+  if (stat.listenerCount('change') === 0) {
+    stat.stop();
+    statWatchers.delete(filename);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.utimes" id="apidoc.element.file-system.utimes">
+        function <span class="apidocSignatureSpan">file-system.</span>utimes
+        <span class="apidocSignatureSpan">(path, atime, mtime, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">utimes = function (path, atime, mtime, callback) {
+  callback = makeCallback(callback);
+  if (!nullCheck(path, callback)) return;
+  var req = new FSReqWrap();
+  req.oncomplete = callback;
+  binding.utimes(pathModule._makeLong(path),
+                 toUnixTimestamp(atime),
+                 toUnixTimestamp(mtime),
+                 req);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.utimesSync" id="apidoc.element.file-system.utimesSync">
+        function <span class="apidocSignatureSpan">file-system.</span>utimesSync
+        <span class="apidocSignatureSpan">(path, atime, mtime)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">utimesSync = function (path, atime, mtime) {
+  nullCheck(path);
+  atime = toUnixTimestamp(atime);
+  mtime = toUnixTimestamp(mtime);
+  binding.utimes(pathModule._makeLong(path), atime, mtime);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.watch" id="apidoc.element.file-system.watch">
+        function <span class="apidocSignatureSpan">file-system.</span>watch
+        <span class="apidocSignatureSpan">(filename, options, listener)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">watch = function (filename, options, listener) {
+  nullCheck(filename);
+
+  options = options || {};
+  if (typeof options === 'function') {
+    listener = options;
+    options = {};
+  } else if (typeof options === 'string') {
+    options = {encoding: options};
+  }
+  if (typeof options !== 'object')
+    throw new TypeError('"options" must be a string or an object');
+
+  if (options.persistent === undefined) options.persistent = true;
+  if (options.recursive === undefined) options.recursive = false;
+
+  const watcher = new FSWatcher();
+  watcher.start(filename,
+                options.persistent,
+                options.recursive,
+                options.encoding);
+
+  if (listener) {
+    watcher.addListener('change', listener);
+  }
+
+  return watcher;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.watchFile" id="apidoc.element.file-system.watchFile">
+        function <span class="apidocSignatureSpan">file-system.</span>watchFile
+        <span class="apidocSignatureSpan">(filename, options, listener)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">watchFile = function (filename, options, listener) {
+  nullCheck(filename);
+  filename = pathModule.resolve(filename);
+  var stat;
+
+  var defaults = {
+    // Poll interval in milliseconds. 5007 is what libev used to use. It's
+    // a little on the slow side but let's stick with it for now to keep
+    // behavioral changes to a minimum.
+    interval: 5007,
+    persistent: true
+  };
+
+  if (options !== null &amp;&amp; typeof options === 'object') {
+    options = util._extend(defaults, options);
+  } else {
+    listener = options;
+    options = defaults;
+  }
+
+  if (typeof listener !== 'function') {
+    throw new Error('"watchFile()" requires a listener function');
+  }
+
+  stat = statWatchers.get(filename);
+
+  if (stat === undefined) {
+    stat = new StatWatcher();
+    stat.start(filename, options.persistent, options.interval);
+    statWatchers.set(filename, stat);
+  }
+
+  stat.addListener('change', listener);
+  return stat;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.write" id="apidoc.element.file-system.write">
+        function <span class="apidocSignatureSpan">file-system.</span>write
+        <span class="apidocSignatureSpan">(fd, buffer, offset, length, position, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (fd, buffer, offset, length, position, callback) {
+  function wrapper(err, written) {
+    // Retain a reference to buffer so that it can't be GC'ed too soon.
+    callback(err, written || 0, buffer);
+  }
+
+  var req = new FSReqWrap();
+  req.oncomplete = wrapper;
+
+  if (buffer instanceof Buffer) {
+    // if no position is passed then assume null
+    if (typeof position === 'function') {
+      callback = position;
+      position = null;
+    }
+    callback = maybeCallback(callback);
+    return binding.writeBuffer(fd, buffer, offset, length, position, req);
+  }
+
+  if (typeof buffer !== 'string')
+    buffer += '';
+  if (typeof position !== 'function') {
+    if (typeof offset === 'function') {
+      position = offset;
+      offset = null;
+    } else {
+      position = length;
+    }
+    length = 'utf8';
+  }
+  callback = maybeCallback(position);
+  return binding.writeString(fd, buffer, offset, length, req);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.writeFile" id="apidoc.element.file-system.writeFile">
+        function <span class="apidocSignatureSpan">file-system.</span>writeFile
+        <span class="apidocSignatureSpan">(filename, data, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeFile = function (filename, data, options, callback) {
+  var result = checkCbAndOpts(options, callback);
+  var dirname = path.dirname(filename);
+  options = result.options;
+  callback = result.callback;
+
+  // Create dir first
+  exports.mkdir(dirname, function() {
+    fs.writeFile(filename, data, options, callback);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+This module make file opertaion apis simple, you don't need to care the dir exits. and the api is same as node's filesystem
+. This is no exists time cost for this plugin.
+```js
+var fs = require('file-system');
+
+fs.mkdir('1/2/3/4/5', [mode], function(err) {});
+fs.mkdirSync('1/2/3/4/5', [mode]);
+fs.<span class="apidocCodeKeywordSpan">writeFile</span>('path/test.txt', 'aaa', function(err) {})
+```
+
+### install
+```
+npm install file-system --save
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.writeFileSync" id="apidoc.element.file-system.writeFileSync">
+        function <span class="apidocSignatureSpan">file-system.</span>writeFileSync
+        <span class="apidocSignatureSpan">(filename, data, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeFileSync = function (filename, data, options) {
+  var dirname = path.dirname(filename);
+
+  exports.mkdirSync(dirname);
+  fs.writeFileSync(filename, data, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @description
+* Same as writeFile, but it is synchronous
+*/
+exports.writeFileSync = function(filename, data, options) {
+ var dirname = path.dirname(filename);
+
+ exports.mkdirSync(dirname);
+ fs.<span class="apidocCodeKeywordSpan">writeFileSync</span>(filename, data, options);
+};
+
+/**
+* @description
+* Asynchronously copy a file
+* @example
+* file.copyFile('demo.txt', 'demo.dest.txt', { done: function(err) { }})
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.writeSync" id="apidoc.element.file-system.writeSync">
+        function <span class="apidocSignatureSpan">file-system.</span>writeSync
+        <span class="apidocSignatureSpan">(fd, buffer, offset, length, position)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeSync = function (fd, buffer, offset, length, position) {
+  if (buffer instanceof Buffer) {
+    if (position === undefined)
+      position = null;
+    return binding.writeBuffer(fd, buffer, offset, length, position);
+  }
+  if (typeof buffer !== 'string')
+    buffer += '';
+  if (offset === undefined)
+    offset = null;
+  return binding.writeString(fd, buffer, offset, length, position);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.file-system.ReadStream" id="apidoc.module.file-system.ReadStream">module file-system.ReadStream</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.ReadStream.ReadStream" id="apidoc.element.file-system.ReadStream.ReadStream">
+        function <span class="apidocSignatureSpan">file-system.</span>ReadStream
+        <span class="apidocSignatureSpan">(path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ReadStream(path, options) {
+  if (!(this instanceof ReadStream))
+    return new ReadStream(path, options);
+
+  if (options === undefined)
+    options = {};
+  else if (typeof options === 'string')
+    options = { encoding: options };
+  else if (options === null || typeof options !== 'object')
+    throw new TypeError('"options" argument must be a string or an object');
+
+  // a little bit bigger buffer and water marks by default
+  options = Object.create(options);
+  if (options.highWaterMark === undefined)
+    options.highWaterMark = 64 * 1024;
+
+  Readable.call(this, options);
+
+  this.path = path;
+  this.fd = options.fd === undefined ? null : options.fd;
+  this.flags = options.flags === undefined ? 'r' : options.flags;
+  this.mode = options.mode === undefined ? 0o666 : options.mode;
+
+  this.start = options.start;
+  this.end = options.end;
+  this.autoClose = options.autoClose === undefined ? true : options.autoClose;
+  this.pos = undefined;
+  this.bytesRead = 0;
+
+  if (this.start !== undefined) {
+    if (typeof this.start !== 'number') {
+      throw new TypeError('"start" option must be a Number');
+    }
+    if (this.end === undefined) {
+      this.end = Infinity;
+    } else if (typeof this.end !== 'number') {
+      throw new TypeError('"end" option must be a Number');
+    }
+
+    if (this.start &gt; this.end) {
+      throw new Error('"start" option must be &lt;= "end" option');
+    }
+
+    this.pos = this.start;
+  }
+
+  if (typeof this.fd !== 'number')
+    this.open();
+
+  this.on('end', function() {
+    if (this.autoClose) {
+      this.destroy();
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.ReadStream.super_" id="apidoc.element.file-system.ReadStream.super_">
+        function <span class="apidocSignatureSpan">file-system.ReadStream.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Readable(options) {
+  if (!(this instanceof Readable))
+    return new Readable(options);
+
+  this._readableState = new ReadableState(options, this);
+
+  // legacy
+  this.readable = true;
+
+  if (options &amp;&amp; typeof options.read === 'function')
+    this._read = options.read;
+
+  Stream.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.file-system.ReadStream.prototype" id="apidoc.module.file-system.ReadStream.prototype">module file-system.ReadStream.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.ReadStream.prototype._read" id="apidoc.element.file-system.ReadStream.prototype._read">
+        function <span class="apidocSignatureSpan">file-system.ReadStream.prototype.</span>_read
+        <span class="apidocSignatureSpan">(n)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_read = function (n) {
+  if (typeof this.fd !== 'number')
+    return this.once('open', function() {
+      this._read(n);
+    });
+
+  if (this.destroyed)
+    return;
+
+  if (!pool || pool.length - pool.used &lt; kMinPoolSpace) {
+    // discard the old pool.
+    allocNewPool(this._readableState.highWaterMark);
+  }
+
+  // Grab another reference to the pool in the case that while we're
+  // in the thread pool another read() finishes up the pool, and
+  // allocates a new one.
+  var thisPool = pool;
+  var toRead = Math.min(pool.length - pool.used, n);
+  var start = pool.used;
+
+  if (this.pos !== undefined)
+    toRead = Math.min(this.end - this.pos + 1, toRead);
+
+  // already read everything we were supposed to read!
+  // treat as EOF.
+  if (toRead &lt;= 0)
+    return this.push(null);
+
+  // the actual read.
+  var self = this;
+  fs.read(this.fd, pool, pool.used, toRead, this.pos, onread);
+
+  // move the pool positions, and internal position for reading.
+  if (this.pos !== undefined)
+    this.pos += toRead;
+  pool.used += toRead;
+
+  function onread(er, bytesRead) {
+    if (er) {
+      if (self.autoClose) {
+        self.destroy();
+      }
+      self.emit('error', er);
+    } else {
+      var b = null;
+      if (bytesRead &gt; 0) {
+        self.bytesRead += bytesRead;
+        b = thisPool.slice(start, start + bytesRead);
+      }
+
+      self.push(b);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.ReadStream.prototype.close" id="apidoc.element.file-system.ReadStream.prototype.close">
+        function <span class="apidocSignatureSpan">file-system.ReadStream.prototype.</span>close
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function (cb) {
+  var self = this;
+  if (cb)
+    this.once('close', cb);
+  if (this.closed || typeof this.fd !== 'number') {
+    if (typeof this.fd !== 'number') {
+      this.once('open', close);
+      return;
+    }
+    return process.nextTick(() =&gt; this.emit('close'));
+  }
+  this.closed = true;
+  close();
+
+  function close(fd) {
+    fs.close(fd || self.fd, function(er) {
+      if (er)
+        self.emit('error', er);
+      else
+        self.emit('close');
+    });
+    self.fd = null;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.ReadStream.prototype.destroy" id="apidoc.element.file-system.ReadStream.prototype.destroy">
+        function <span class="apidocSignatureSpan">file-system.ReadStream.prototype.</span>destroy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">destroy = function () {
+  if (this.destroyed)
+    return;
+  this.destroyed = true;
+  this.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.ReadStream.prototype.open" id="apidoc.element.file-system.ReadStream.prototype.open">
+        function <span class="apidocSignatureSpan">file-system.ReadStream.prototype.</span>open
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">open = function () {
+  var self = this;
+  fs.open(this.path, this.flags, this.mode, function(er, fd) {
+    if (er) {
+      if (self.autoClose) {
+        self.destroy();
+      }
+      self.emit('error', er);
+      return;
+    }
+
+    self.fd = fd;
+    self.emit('open', fd);
+    // start the flow of data.
+    self.read();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.file-system.Stats" id="apidoc.module.file-system.Stats">module file-system.Stats</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.Stats.Stats" id="apidoc.element.file-system.Stats.Stats">
+        function <span class="apidocSignatureSpan">file-system.</span>Stats
+        <span class="apidocSignatureSpan">( dev, mode, nlink, uid, gid, rdev, blksize, ino, size, blocks, atim_msec, mtim_msec, ctim_msec, birthtim_msec)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Stats( dev, mode, nlink, uid, gid, rdev, blksize, ino, size, blocks, atim_msec, mtim_msec, ctim_msec, birthtim_msec) {
+  this.dev = dev;
+  this.mode = mode;
+  this.nlink = nlink;
+  this.uid = uid;
+  this.gid = gid;
+  this.rdev = rdev;
+  this.blksize = blksize;
+  this.ino = ino;
+  this.size = size;
+  this.blocks = blocks;
+  this.atime = new Date(atim_msec);
+  this.mtime = new Date(mtim_msec);
+  this.ctime = new Date(ctim_msec);
+  this.birthtime = new Date(birthtim_msec);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.file-system.Stats.prototype" id="apidoc.module.file-system.Stats.prototype">module file-system.Stats.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.Stats.prototype._checkModeProperty" id="apidoc.element.file-system.Stats.prototype._checkModeProperty">
+        function <span class="apidocSignatureSpan">file-system.Stats.prototype.</span>_checkModeProperty
+        <span class="apidocSignatureSpan">(property)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_checkModeProperty = function (property) {
+  return ((this.mode &amp; constants.S_IFMT) === property);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.Stats.prototype.isBlockDevice" id="apidoc.element.file-system.Stats.prototype.isBlockDevice">
+        function <span class="apidocSignatureSpan">file-system.Stats.prototype.</span>isBlockDevice
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isBlockDevice = function () {
+  return this._checkModeProperty(constants.S_IFBLK);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.Stats.prototype.isCharacterDevice" id="apidoc.element.file-system.Stats.prototype.isCharacterDevice">
+        function <span class="apidocSignatureSpan">file-system.Stats.prototype.</span>isCharacterDevice
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isCharacterDevice = function () {
+  return this._checkModeProperty(constants.S_IFCHR);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.Stats.prototype.isDirectory" id="apidoc.element.file-system.Stats.prototype.isDirectory">
+        function <span class="apidocSignatureSpan">file-system.Stats.prototype.</span>isDirectory
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isDirectory = function () {
+  return this._checkModeProperty(constants.S_IFDIR);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      files.forEach(function(filename) {
+var filepath = path.join(dirpath, filename);
+
+fs.stat(filepath, function(err, stats) {
+    var relative = path.relative(rootpath, filepath);
+    var flag = filterCb(relative);
+
+    if (stats.<span class="apidocCodeKeywordSpan">isDirectory</span>()) {
+      recurse(filepath);
+      if (flag) callback(filepath, relative);
+    } else {
+      if (flag) callback(filepath, relative, filename);
+    }
+  });
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.Stats.prototype.isFIFO" id="apidoc.element.file-system.Stats.prototype.isFIFO">
+        function <span class="apidocSignatureSpan">file-system.Stats.prototype.</span>isFIFO
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isFIFO = function () {
+  return this._checkModeProperty(constants.S_IFIFO);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.Stats.prototype.isFile" id="apidoc.element.file-system.Stats.prototype.isFile">
+        function <span class="apidocSignatureSpan">file-system.Stats.prototype.</span>isFile
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isFile = function () {
+  return this._checkModeProperty(constants.S_IFREG);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.Stats.prototype.isSocket" id="apidoc.element.file-system.Stats.prototype.isSocket">
+        function <span class="apidocSignatureSpan">file-system.Stats.prototype.</span>isSocket
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isSocket = function () {
+  return this._checkModeProperty(constants.S_IFSOCK);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.Stats.prototype.isSymbolicLink" id="apidoc.element.file-system.Stats.prototype.isSymbolicLink">
+        function <span class="apidocSignatureSpan">file-system.Stats.prototype.</span>isSymbolicLink
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isSymbolicLink = function () {
+  return this._checkModeProperty(constants.S_IFLNK);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.file-system.WriteStream" id="apidoc.module.file-system.WriteStream">module file-system.WriteStream</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.WriteStream.WriteStream" id="apidoc.element.file-system.WriteStream.WriteStream">
+        function <span class="apidocSignatureSpan">file-system.</span>WriteStream
+        <span class="apidocSignatureSpan">(path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WriteStream(path, options) {
+  if (!(this instanceof WriteStream))
+    return new WriteStream(path, options);
+
+  if (options === undefined)
+    options = {};
+  else if (typeof options === 'string')
+    options = { encoding: options };
+  else if (options === null || typeof options !== 'object')
+    throw new TypeError('"options" argument must be a string or an object');
+
+  options = Object.create(options);
+
+  Writable.call(this, options);
+
+  this.path = path;
+  this.fd = options.fd === undefined ? null : options.fd;
+  this.flags = options.flags === undefined ? 'w' : options.flags;
+  this.mode = options.mode === undefined ? 0o666 : options.mode;
+
+  this.start = options.start;
+  this.autoClose = options.autoClose === undefined ? true : !!options.autoClose;
+  this.pos = undefined;
+  this.bytesWritten = 0;
+
+  if (this.start !== undefined) {
+    if (typeof this.start !== 'number') {
+      throw new TypeError('"start" option must be a Number');
+    }
+    if (this.start &lt; 0) {
+      throw new Error('"start" must be &gt;= zero');
+    }
+
+    this.pos = this.start;
+  }
+
+  if (options.encoding)
+    this.setDefaultEncoding(options.encoding);
+
+  if (typeof this.fd !== 'number')
+    this.open();
+
+  // dispose on finish.
+  this.once('finish', function() {
+    if (this.autoClose) {
+      this.close();
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.WriteStream.super_" id="apidoc.element.file-system.WriteStream.super_">
+        function <span class="apidocSignatureSpan">file-system.WriteStream.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Writable(options) {
+  // Writable ctor is applied to Duplexes, too.
+  // `realHasInstance` is necessary because using plain `instanceof`
+  // would return false, as no `_writableState` property is attached.
+
+  // Trying to use the custom `instanceof` for Writable here will also break the
+  // Node.js LazyTransform implementation, which has a non-trivial getter for
+  // `_writableState` that would lead to infinite recursion.
+  if (!(realHasInstance.call(Writable, this)) &amp;&amp;
+      !(this instanceof Stream.Duplex)) {
+    return new Writable(options);
+  }
+
+  this._writableState = new WritableState(options, this);
+
+  // legacy.
+  this.writable = true;
+
+  if (options) {
+    if (typeof options.write === 'function')
+      this._write = options.write;
+
+    if (typeof options.writev === 'function')
+      this._writev = options.writev;
+  }
+
+  Stream.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.file-system.WriteStream.prototype" id="apidoc.module.file-system.WriteStream.prototype">module file-system.WriteStream.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.WriteStream.prototype._write" id="apidoc.element.file-system.WriteStream.prototype._write">
+        function <span class="apidocSignatureSpan">file-system.WriteStream.prototype.</span>_write
+        <span class="apidocSignatureSpan">(data, encoding, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_write = function (data, encoding, cb) {
+  if (!(data instanceof Buffer))
+    return this.emit('error', new Error('Invalid data'));
+
+  if (typeof this.fd !== 'number')
+    return this.once('open', function() {
+      this._write(data, encoding, cb);
+    });
+
+  var self = this;
+  fs.write(this.fd, data, 0, data.length, this.pos, function(er, bytes) {
+    if (er) {
+      if (self.autoClose) {
+        self.destroy();
+      }
+      return cb(er);
+    }
+    self.bytesWritten += bytes;
+    cb();
+  });
+
+  if (this.pos !== undefined)
+    this.pos += data.length;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.WriteStream.prototype._writev" id="apidoc.element.file-system.WriteStream.prototype._writev">
+        function <span class="apidocSignatureSpan">file-system.WriteStream.prototype.</span>_writev
+        <span class="apidocSignatureSpan">(data, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_writev = function (data, cb) {
+  if (typeof this.fd !== 'number')
+    return this.once('open', function() {
+      this._writev(data, cb);
+    });
+
+  const self = this;
+  const len = data.length;
+  const chunks = new Array(len);
+  var size = 0;
+
+  for (var i = 0; i &lt; len; i++) {
+    var chunk = data[i].chunk;
+
+    chunks[i] = chunk;
+    size += chunk.length;
+  }
+
+  writev(this.fd, chunks, this.pos, function(er, bytes) {
+    if (er) {
+      self.destroy();
+      return cb(er);
+    }
+    self.bytesWritten += bytes;
+    cb();
+  });
+
+  if (this.pos !== undefined)
+    this.pos += size;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.WriteStream.prototype.close" id="apidoc.element.file-system.WriteStream.prototype.close">
+        function <span class="apidocSignatureSpan">file-system.WriteStream.prototype.</span>close
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function (cb) {
+  var self = this;
+  if (cb)
+    this.once('close', cb);
+  if (this.closed || typeof this.fd !== 'number') {
+    if (typeof this.fd !== 'number') {
+      this.once('open', close);
+      return;
+    }
+    return process.nextTick(() =&gt; this.emit('close'));
+  }
+  this.closed = true;
+  close();
+
+  function close(fd) {
+    fs.close(fd || self.fd, function(er) {
+      if (er)
+        self.emit('error', er);
+      else
+        self.emit('close');
+    });
+    self.fd = null;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.WriteStream.prototype.destroy" id="apidoc.element.file-system.WriteStream.prototype.destroy">
+        function <span class="apidocSignatureSpan">file-system.WriteStream.prototype.</span>destroy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">destroy = function () {
+  if (this.destroyed)
+    return;
+  this.destroyed = true;
+  this.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.WriteStream.prototype.destroySoon" id="apidoc.element.file-system.WriteStream.prototype.destroySoon">
+        function <span class="apidocSignatureSpan">file-system.WriteStream.prototype.</span>destroySoon
+        <span class="apidocSignatureSpan">(chunk, encoding, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">destroySoon = function (chunk, encoding, cb) {
+  var state = this._writableState;
+
+  if (typeof chunk === 'function') {
+    cb = chunk;
+    chunk = null;
+    encoding = null;
+  } else if (typeof encoding === 'function') {
+    cb = encoding;
+    encoding = null;
+  }
+
+  if (chunk !== null &amp;&amp; chunk !== undefined)
+    this.write(chunk, encoding);
+
+  // .end() fully uncorks
+  if (state.corked) {
+    state.corked = 1;
+    this.uncork();
+  }
+
+  // ignore unnecessary end() calls.
+  if (!state.ending &amp;&amp; !state.finished)
+    endWritable(this, state, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.file-system.WriteStream.prototype.open" id="apidoc.element.file-system.WriteStream.prototype.open">
+        function <span class="apidocSignatureSpan">file-system.WriteStream.prototype.</span>open
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">open = function () {
+  fs.open(this.path, this.flags, this.mode, function(er, fd) {
+    if (er) {
+      if (this.autoClose) {
+        this.destroy();
+      }
+      this.emit('error', er);
+      return;
+    }
+
+    this.fd = fd;
+    this.emit('open', fd);
+  }.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
